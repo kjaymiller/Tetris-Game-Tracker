@@ -17,6 +17,7 @@
 		4B2535562723BA3900731E78 /* NewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2535552723BA3900731E78 /* NewGameView.swift */; };
 		4B25355A2723BBCD00731E78 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2535592723BBCD00731E78 /* UserSettingsView.swift */; };
 		4B25355D2723C30200731E78 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25355C2723C30200731E78 /* SystemSettings.swift */; };
+		4B25357E2724844900731E78 /* UpdateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25357D2724844900731E78 /* UpdateGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4B2535552723BA3900731E78 /* NewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameView.swift; sourceTree = "<group>"; };
 		4B2535592723BBCD00731E78 /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
 		4B25355C2723C30200731E78 /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
+		4B25357D2724844900731E78 /* UpdateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				4B25355C2723C30200731E78 /* SystemSettings.swift */,
 				4B2535552723BA3900731E78 /* NewGameView.swift */,
+				4B25357D2724844900731E78 /* UpdateGameView.swift */,
 				4B2535592723BBCD00731E78 /* UserSettingsView.swift */,
 				4B25355327235D4100731E78 /* GameListView.swift */,
 				4B2535402723236700731E78 /* Tetris_Game_TrackerApp.swift */,
@@ -157,6 +160,7 @@
 			files = (
 				4B25355427235D4100731E78 /* GameListView.swift in Sources */,
 				4B25354A2723236900731E78 /* Persistence.swift in Sources */,
+				4B25357E2724844900731E78 /* UpdateGameView.swift in Sources */,
 				4B2535432723236700731E78 /* ContentView.swift in Sources */,
 				4B25354D2723236900731E78 /* Tetris_Game_Tracker.xcdatamodeld in Sources */,
 				4B2535412723236700731E78 /* Tetris_Game_TrackerApp.swift in Sources */,

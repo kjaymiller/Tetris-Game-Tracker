@@ -39,7 +39,7 @@ struct NewGameView: View {
                             Text(String(gamelevel))
                         }
                     }
-                    Picker("Starting Level", selection: $endLevel){
+                    Picker("Ending Level", selection: $endLevel){
                                             ForEach (gameLevels, id:\.self) {gameLevel in
                                                 
                                                 if (gameLevel >= startLevel){
@@ -59,6 +59,7 @@ struct NewGameView: View {
         withAnimation {
             let newGame = Game(context: viewContext)
             newGame.timestamp = Date()
+            newGame.id = UUID()
             newGame.score = Int64(self.score) ?? 0
             newGame.lines = Int64(self.score) ?? 0
             newGame.playStyle = self.playStyle

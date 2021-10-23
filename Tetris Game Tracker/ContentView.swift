@@ -33,7 +33,7 @@ struct ContentView: View {
                 .padding(.vertical, 50)
             }.navigationBarItems(
                 trailing: NavigationLink(
-                    destination: GameListView()
+                    destination: UserSettingsView()
                 ){Image(systemName: "gear")})
         }
     }

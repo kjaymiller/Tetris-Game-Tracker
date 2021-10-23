@@ -18,8 +18,8 @@ var body: some View {
         List {
             ForEach(games) { game in
                 NavigationLink {
-                    
-                } label: {
+                destination: UpdateGameView(game: game)
+                }.label: {
                     Text(game.timestamp!, formatter: itemFormatter)
                 }
             }
