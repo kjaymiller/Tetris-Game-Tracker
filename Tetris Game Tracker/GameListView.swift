@@ -17,15 +17,11 @@ private var games: FetchedResults<Game>
 var body: some View {
         List {
             ForEach(games) { game in
-                NavigationLink {
-                destination: UpdateGameView(game: game)
-                }.label: {
-                    Text(game.timestamp!, formatter: itemFormatter)
+                NavigationLink (destination: UpdateGameView(game: game)){
+                    Text("\(game.score)")
                 }
-            }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
+                }.onDelete(perform: deleteItems)
+        }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
             }
@@ -35,8 +31,7 @@ var body: some View {
                 }
             }
         }
-        Text("Select an item")
-    }
+}
 
 
 
@@ -54,7 +49,7 @@ private func deleteItems(offsets: IndexSet) {
         }
     }
 }
-}
+
 
 private let itemFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -63,10 +58,10 @@ private let itemFormatter: DateFormatter = {
         return formatter
     }()
 
+}
 
 struct GameListView_Preview: PreviewProvider {
 static var previews: some View {
     GameListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
 }
-}
-

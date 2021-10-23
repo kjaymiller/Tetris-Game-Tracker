@@ -61,7 +61,7 @@ struct NewGameView: View {
             newGame.timestamp = Date()
             newGame.id = UUID()
             newGame.score = Int64(self.score) ?? 0
-            newGame.lines = Int64(self.score) ?? 0
+            newGame.lines = Int64(self.lines) ?? 0
             newGame.playStyle = self.playStyle
             newGame.gameType = self.gameType
             newGame.startLevel = Int64(self.startLevel)

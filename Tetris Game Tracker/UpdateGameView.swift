@@ -9,31 +9,75 @@ import SwiftUI
 
 struct UpdateGameView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var game: Game = Game()
-    let formatter = NumberFormatter()
-   
-    @State private var score = game.score
-    @State private var lines = game.lines
     
+    let formatter = NumberFormatter()
+    @ObservedObject var game: Game
+    @State private var score: String
+    @State private var lines: String
+    @State private var timeStamp: Date
+    @State private var startLevel: Int64
+    @State private var endLevel: Int64
+    @State private var playStyle: String
+    @State private var gameType: String
     
     var body: some View {
-            Form {
-                Section(header: Text("Game Scoring")){
-                    TextField("Score", value: $game.score, formatter: formatter)
-                    TextField("Lines", value: $game.lines, formatter: formatter)
-                               }
-                    
-            }.navigationBarTitle("Save New Score", displayMode: .inline)
-                Button("Save changes") {
-                                addItem()
-                }
-            }
-    }
+        Form {
+           Section(header: Text("Game Scoring")){
+                              TextField("Score", text: $score)
+                              TextField("Lines", text: $lines)
+                          }
+           Section(header: Text("Game Metadata")){
+               DatePicker("Date", selection: $timeStamp)
+               Picker("Game Type", selection: $gameType){
+                   ForEach (gameTypeOptions, id:\.self) {option in
+                       Text(option)}
+               }.pickerStyle(.segmented)
+               Picker("Play Style", selection: $playStyle){
+                   ForEach (playStyleOptions, id:\.self) {option in
+                                              Text(option)}
+               }.pickerStyle(.segmented)
+               Picker("Starting Level", selection: $startLevel){
+                   ForEach (gameLevels, id:\.self) {gamelevel in
+                       Text(String(gamelevel))
+                   }
+               }
+               Picker("Ending Level", selection: $endLevel){
+                                       ForEach (gameLevels, id:\.self) {gameLevel in
+                                           
+                                           if (gameLevel >= startLevel){
+                                           Text(String(gameLevel))
+                                           }
+                                       }
+                                   }
+           }
+           
+           Button("Save changes") {
+                           updateItem()
+           }.navigationBarTitle("Save New Score", displayMode: .inline)
+        }
+        }
 
-    private func addItem() {
+    init(game: Game){
+        self.game = game
+        self._score = State(wrappedValue: String(game.score))
+        self._lines = State(wrappedValue: String(game.lines))
+        self._startLevel = State(wrappedValue: game.startLevel)
+        self._gameType = State(wrappedValue: game.gameType ?? "")
+        self._playStyle = State(wrappedValue: game.playStyle ?? "")
+        self._endLevel = State(wrappedValue: game.endLevel)
+        self._timeStamp = State(wrappedValue: game.timestamp ?? Date())
+        }
+
+    private func updateItem() {
         withAnimation {
-            let newGame = Game(context: viewContext)
-            newGame.timestamp = Date()
+            game.timestamp = self.timeStamp
+            game.score = Int64(self.score) ?? 0
+            game.lines = Int64(self.lines) ?? 0
+            game.playStyle = self.playStyle
+            game.gameType = self.gameType
+            game.startLevel = Int64(self.startLevel)
+            game.endLevel = Int64(self.endLevel)
+
             do {
                 try viewContext.save()
             } catch {
@@ -43,12 +87,5 @@ struct UpdateGameView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
-}
-
-
-struct UpdateGameView_Previews: PreviewProvider {
-    static var previews: some View {
-        UpdateGameView()
     }
 }
