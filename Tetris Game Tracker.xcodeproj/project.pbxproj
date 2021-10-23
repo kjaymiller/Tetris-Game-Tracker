@@ -13,6 +13,10 @@
 		4B2535482723236900731E78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2535472723236900731E78 /* Preview Assets.xcassets */; };
 		4B25354A2723236900731E78 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2535492723236900731E78 /* Persistence.swift */; };
 		4B25354D2723236900731E78 /* Tetris_Game_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B25354B2723236900731E78 /* Tetris_Game_Tracker.xcdatamodeld */; };
+		4B25355427235D4100731E78 /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25355327235D4100731E78 /* GameListView.swift */; };
+		4B2535562723BA3900731E78 /* NewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2535552723BA3900731E78 /* NewGameView.swift */; };
+		4B25355A2723BBCD00731E78 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2535592723BBCD00731E78 /* UserSettingsView.swift */; };
+		4B25355D2723C30200731E78 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25355C2723C30200731E78 /* SystemSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		4B2535472723236900731E78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B2535492723236900731E78 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4B25354C2723236900731E78 /* Tetris_Game_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tetris_Game_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		4B25355327235D4100731E78 /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
+		4B2535552723BA3900731E78 /* NewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameView.swift; sourceTree = "<group>"; };
+		4B2535592723BBCD00731E78 /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		4B25355C2723C30200731E78 /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 		4B25353F2723236700731E78 /* Tetris Game Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4B25355C2723C30200731E78 /* SystemSettings.swift */,
+				4B2535552723BA3900731E78 /* NewGameView.swift */,
+				4B2535592723BBCD00731E78 /* UserSettingsView.swift */,
+				4B25355327235D4100731E78 /* GameListView.swift */,
 				4B2535402723236700731E78 /* Tetris_Game_TrackerApp.swift */,
 				4B2535422723236700731E78 /* ContentView.swift */,
 				4B2535442723236900731E78 /* Assets.xcassets */,
@@ -143,10 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B25355427235D4100731E78 /* GameListView.swift in Sources */,
 				4B25354A2723236900731E78 /* Persistence.swift in Sources */,
 				4B2535432723236700731E78 /* ContentView.swift in Sources */,
 				4B25354D2723236900731E78 /* Tetris_Game_Tracker.xcdatamodeld in Sources */,
 				4B2535412723236700731E78 /* Tetris_Game_TrackerApp.swift in Sources */,
+				4B25355D2723C30200731E78 /* SystemSettings.swift in Sources */,
+				4B25355A2723BBCD00731E78 /* UserSettingsView.swift in Sources */,
+				4B2535562723BA3900731E78 /* NewGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
